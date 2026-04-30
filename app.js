@@ -23,6 +23,18 @@ let dashboards = [
     slug: "controle-execucao-remo",
     icone: "controle",
     url: "https://controle-de-execucao-remo.vercel.app/#/admin"
+  },
+  {
+    nome: "Planilha Online REMO",
+    descricao: "Planilha operacional compartilhada no Google Sheets para edição colaborativa da equipe.",
+    area: "Planilhas Online",
+    responsavel: "REMO Engenharia",
+    status: "Publicado",
+    atualizadoEm: "30/04/2026",
+    slug: "planilha-online-remo",
+    icone: "planilha",
+    tipo: "planilha",
+    url: "https://docs.google.com/spreadsheets/d/1tLVnQBQyNNk1tsUoV_aR6UDoKVkeJTp8EKVU4MIMKn0/edit?pli=1&gid=1553845400#gid=1553845400"
   }
 ];
 
@@ -108,8 +120,12 @@ function render() {
   panelGrid.innerHTML = items.map(item => {
     const isPublished = item.status === "Publicado" && item.url;
     const statusClass = item.status === "Publicado" ? "" : " implantacao";
+    const isSheet = item.tipo === "planilha";
+    const buttonLabel = isSheet ? "Abrir planilha" : "Abrir painel";
+    const href = isSheet ? item.url : `visualizar.html?painel=${encodeURIComponent(item.slug || item.nome)}`;
+    const target = isSheet ? ' target="_blank" rel="noopener"' : "";
     const button = isPublished
-      ? `<a class="open-link" href="visualizar.html?painel=${encodeURIComponent(item.slug || item.nome)}">Abrir painel</a>`
+      ? `<a class="open-link" href="${escapeHtml(href)}"${target}>${buttonLabel}</a>`
       : '<span class="open-link disabled">Em preparação</span>';
     return `
       <article class="dashboard-card">
@@ -136,6 +152,7 @@ function iconSvg(type) {
   const icons = {
     alerta: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 19a1.7 1.7 0 0 0 1.5 2.5h15.4a1.7 1.7 0 0 0 1.5-2.5L12 3Z"/><path d="M12 9v5"/><path d="M12 18h.01"/></svg>',
     controle: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l2 2 4-5"/><path d="M20 6 12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6Z"/></svg>',
+    planilha: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>',
     painel: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>'
   };
   return icons[type] || icons.painel;

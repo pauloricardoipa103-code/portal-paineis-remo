@@ -269,6 +269,11 @@ button,
   color: var(--remo-blue);
 }
 
+.card-icon.planilha {
+  background: #e8f7ed;
+  color: #198754;
+}
+
 .card-icon.painel {
   background: #fff5c9;
   color: #8a6b00;

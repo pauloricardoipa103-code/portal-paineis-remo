@@ -20,5 +20,17 @@
     "slug": "controle-execucao-remo",
     "icone": "controle",
     "url": "https://controle-de-execucao-remo.vercel.app/#/admin"
+  },
+  {
+    "nome": "Planilha Online REMO",
+    "descricao": "Planilha operacional compartilhada no Google Sheets para edição colaborativa da equipe.",
+    "area": "Planilhas Online",
+    "responsavel": "REMO Engenharia",
+    "status": "Publicado",
+    "atualizadoEm": "30/04/2026",
+    "slug": "planilha-online-remo",
+    "icone": "planilha",
+    "tipo": "planilha",
+    "url": "https://docs.google.com/spreadsheets/d/1tLVnQBQyNNk1tsUoV_aR6UDoKVkeJTp8EKVU4MIMKn0/edit?pli=1&gid=1553845400#gid=1553845400"
   }
 ]

@@ -23,6 +23,7 @@ Edite o arquivo `paineis.json` e adicione um novo objeto com:
 - `status`
 - `atualizadoEm`
 - `url`
+- `tipo` opcional: use `planilha` para abrir em nova aba, sem carregar dentro do visualizador.
 
 Quando o painel estiver pronto, altere `status` para `Publicado` e informe a URL.
 
