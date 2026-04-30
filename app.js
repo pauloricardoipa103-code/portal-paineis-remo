@@ -10,6 +10,7 @@ let dashboards = [
     status: "Publicado",
     atualizadoEm: "30/04/2026",
     slug: "anomalias-equatorial",
+    icone: "alerta",
     url: "https://pauloricardoipa103-code.github.io/dashboard-programacao-ipora/"
   },
   {
@@ -20,6 +21,7 @@ let dashboards = [
     status: "Publicado",
     atualizadoEm: "30/04/2026",
     slug: "controle-execucao-remo",
+    icone: "controle",
     url: "https://controle-de-execucao-remo.vercel.app/#/admin"
   }
 ];
@@ -112,7 +114,10 @@ function render() {
     return `
       <article class="dashboard-card">
         <div class="card-head">
-          <h2>${escapeHtml(item.nome)}</h2>
+          <div class="title-row">
+            <span class="card-icon ${escapeHtml(item.icone || "painel")}">${iconSvg(item.icone)}</span>
+            <h2>${escapeHtml(item.nome)}</h2>
+          </div>
           <span class="status${statusClass}">${escapeHtml(item.status)}</span>
         </div>
         <p>${escapeHtml(item.descricao)}</p>
@@ -125,6 +130,15 @@ function render() {
       </article>
     `;
   }).join("");
+}
+
+function iconSvg(type) {
+  const icons = {
+    alerta: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 19a1.7 1.7 0 0 0 1.5 2.5h15.4a1.7 1.7 0 0 0 1.5-2.5L12 3Z"/><path d="M12 9v5"/><path d="M12 18h.01"/></svg>',
+    controle: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l2 2 4-5"/><path d="M20 6 12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6Z"/></svg>',
+    painel: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>'
+  };
+  return icons[type] || icons.painel;
 }
 
 loginForm.addEventListener("submit", async event => {

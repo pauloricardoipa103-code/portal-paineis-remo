@@ -7,6 +7,7 @@
     "status": "Publicado",
     "atualizadoEm": "30/04/2026",
     "slug": "anomalias-equatorial",
+    "icone": "alerta",
     "url": "https://pauloricardoipa103-code.github.io/dashboard-programacao-ipora/"
   },
   {
@@ -17,6 +18,7 @@
     "status": "Publicado",
     "atualizadoEm": "30/04/2026",
     "slug": "controle-execucao-remo",
+    "icone": "controle",
     "url": "https://controle-de-execucao-remo.vercel.app/#/admin"
   }
 ]
