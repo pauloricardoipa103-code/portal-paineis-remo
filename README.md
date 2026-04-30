@@ -27,3 +27,10 @@ Edite o arquivo `paineis.json` e adicione um novo objeto com:
 Quando o painel estiver pronto, altere `status` para `Publicado` e informe a URL.
 
 O botão do portal abre `visualizar.html?painel=...`, mantendo o gestor dentro do endereço do portal.
+
+## Links externos individuais
+
+Para compartilhar somente um painel, sem mostrar a lista completa do portal, use:
+
+- `externo.html?painel=anomalias-equatorial`
+- `externo.html?painel=controle-execucao-remo`
