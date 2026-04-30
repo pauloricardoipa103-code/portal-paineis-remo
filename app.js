@@ -9,6 +9,7 @@ let dashboards = [
     responsavel: "REMO Engenharia",
     status: "Publicado",
     atualizadoEm: "30/04/2026",
+    slug: "anomalias-equatorial",
     url: "https://pauloricardoipa103-code.github.io/dashboard-programacao-ipora/"
   }
 ];
@@ -96,7 +97,7 @@ function render() {
     const isPublished = item.status === "Publicado" && item.url;
     const statusClass = item.status === "Publicado" ? "" : " implantacao";
     const button = isPublished
-      ? `<a class="open-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Abrir painel</a>`
+      ? `<a class="open-link" href="visualizar.html?painel=${encodeURIComponent(item.slug || item.nome)}">Abrir painel</a>`
       : '<span class="open-link disabled">Em preparação</span>';
     return `
       <article class="dashboard-card">
