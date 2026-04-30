@@ -4,6 +4,12 @@ const BUILTIN_PANELS = [
     descricao: "Acompanhamento das anomalias pendentes e executadas encaminhadas pela Equatorial para a REMO.",
     slug: "anomalias-equatorial",
     url: "https://pauloricardoipa103-code.github.io/dashboard-programacao-ipora/"
+  },
+  {
+    nome: "Controle de Execução REMO",
+    descricao: "Painel administrativo para acompanhamento das execuções enviadas e controle operacional da REMO.",
+    slug: "controle-execucao-remo",
+    url: "https://controle-de-execucao-remo.vercel.app/#/admin"
   }
 ];
 
