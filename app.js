@@ -7,9 +7,9 @@ let dashboards = [
     descricao: "Acompanhamento das anomalias pendentes e executadas encaminhadas pela Equatorial para a REMO.",
     area: "Operacional",
     responsavel: "REMO Engenharia",
-    status: "Em implantação",
+    status: "Publicado",
     atualizadoEm: "30/04/2026",
-    url: ""
+    url: "https://pauloricardoipa103-code.github.io/dashboard-programacao-ipora/"
   }
 ];
 
