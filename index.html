@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Painéis REMO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section id="loginView" class="login-view">
+    <div class="login-panel">
+      <div class="logo-box">
+        <img src="assets/logo-remo-portal.png" alt="REMO Engenharia">
+      </div>
+      <h1>Portal de Painéis REMO</h1>
+      <p>Acesso centralizado aos dashboards operacionais da REMO.</p>
+      <form id="loginForm" class="login-form">
+        <label for="password">Senha de acesso</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="Digite a senha">
+        <button type="submit">Entrar</button>
+        <span id="loginError" class="login-error" role="alert"></span>
+      </form>
+    </div>
+  </section>
+
+  <main id="portalView" class="portal-view" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/logo-remo-portal.png" alt="REMO Engenharia">
+      </div>
+      <div>
+        <h1>Portal de Painéis REMO</h1>
+        <p>Central de dashboards e indicadores operacionais.</p>
+      </div>
+      <button id="logoutButton" type="button" class="logout-button">Sair</button>
+    </header>
+
+    <section class="toolbar">
+      <div>
+        <label for="searchInput">Buscar painel</label>
+        <input id="searchInput" type="search" placeholder="Nome, área ou descrição">
+      </div>
+      <div>
+        <label for="areaFilter">Área</label>
+        <select id="areaFilter">
+          <option value="">Todas</option>
+        </select>
+      </div>
+      <div>
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter">
+          <option value="">Todos</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="summary">
+      <div class="metric">
+        <span>Total de painéis</span>
+        <strong id="metricTotal">0</strong>
+      </div>
+      <div class="metric">
+        <span>Publicados</span>
+        <strong id="metricPublished">0</strong>
+      </div>
+      <div class="metric">
+        <span>Em implantação</span>
+        <strong id="metricDraft">0</strong>
+      </div>
+    </section>
+
+    <section id="panelGrid" class="panel-grid" aria-label="Lista de painéis"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
